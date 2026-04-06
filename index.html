@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepak Chandran — Inventor · Engineer · Founder</title>
+  <meta name="description" content="Deepak Chandran, Ph.D — Inventor and engineer working at the intersection of power electronics, EV charging infrastructure, and intellectual property." />
+  <meta property="og:title" content="Deepak Chandran" />
+  <meta property="og:description" content="Inventor · Engineer · Serial Founder. Power electronics, EV charging infrastructure, and IP strategy." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #080c10;
+      --bg2:      #0e1318;
+      --bg3:      #141b22;
+      --border:   #1e2a35;
+      --muted:    #4a6077;
+      --text:     #c8d8e8;
+      --heading:  #eaf2fa;
+      --accent:   #38bdf8;
+      --accent2:  #0ea5e9;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --green:    #34d399;
+      --yellow:   #fbbf24;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 60px;
+      background: rgba(8, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--heading);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 2.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    h1 .ph {
+      color: var(--accent);
+      font-weight: 400;
+      font-size: 0.55em;
+      letter-spacing: -0.01em;
+    }
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-sub span { color: var(--text); }
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--text);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #060a0e;
+    }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 5rem 2.5rem; }
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.025em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-text p { margin-bottom: 1rem; color: var(--text); }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .stat-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+    }
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.2rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── FOCUS AREAS ── */
+    #focus { background: var(--bg2); }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .focus-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .focus-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .focus-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .focus-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.4rem;
+    }
+    .focus-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── PATENTS ── */
+    #patents { background: var(--bg); }
+    .patent-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .patent-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+    .patent-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.3rem;
+    }
+    .patent-item p {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .patent-badge {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .badge-granted {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .badge-pending {
+      background: rgba(251, 191, 36, 0.1);
+      color: var(--yellow);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
+    /* ── WRITING ── */
+    #writing { background: var(--bg2); }
+    .writing-block {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .writing-block p { color: var(--text); margin-bottom: 1.25rem; }
+    .writing-block p:last-of-type { margin-bottom: 0; }
+    .writing-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .topic-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── CONNECT ── */
+    #connect { background: var(--bg); }
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .connect-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .connect-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .connect-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .connect-link svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .connect-badge-area {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .connect-badge-area .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .badge-container {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 4rem 1.25rem; }
+      .about-grid, .connect-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .hero { padding: 80px 1.25rem 3rem; }
+    }
+
+    /* ── GLOW PULSE ── */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+    .glow-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2.5s ease-in-out infinite;
+      vertical-align: middle;
+      margin-right: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DC <span>//</span> deepakchandran.com</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Work</a></li>
+    <li><a href="#patents">Patents</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="glow-dot"></span>
+      Available to connect
+    </div>
+    <h1>Deepak Chandran <span class="ph">Ph.D</span></h1>
+    <p class="hero-sub">
+      <span>Inventor</span> · <span>Engineer</span> · <span>Serial Founder</span>
+    </p>
+    <p class="hero-description">
+      I build things that don't exist yet — power electronics systems, EV charging infrastructure, and the intellectual property that sits beneath both.
+    </p>
+    <div class="hero-cta">
+      <a href="#connect" class="btn btn-primary">Get in touch</a>
+      <a href="https://www.linkedin.com/in/chandrandeepak" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/cdr2265" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">// about</div>
+    <h2>Building at the edge of what's possible</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Currently at <strong style="color:var(--heading)">Emergence Technologies</strong> as Chief Innovation Officer, where I built a patented voice-based natural language security system capable of identifying multiple users, detecting distress in real time, and autonomously contacting 9-1-1. The technology is actively licensed across multiple use cases.
+        </p>
+        <p>
+          As a serial founder, I've spent the past half decade designing AC and DC fast charging systems from 60 to 480&nbsp;kW and navigating the infrastructure realities of emerging markets globally. The problems aren't the same in each place — the grid topology, the utility structure, the policy environment — and that's what makes it interesting.
+        </p>
+        <p>
+          I hold a Ph.D and am currently pursuing graduate studies in AI, and legal studies at Cornell. That's not academic accumulation — it's because the next decade of energy technology will be decided as much by software intelligence, policy design, and IP strategy as by electrical engineering.
+        </p>
+        <p>
+          I work closely with <strong style="color:var(--heading)">IEEE, SAE, and NENA</strong> because standards are where engineering constraints get codified into what's actually deployable.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-value">60–480</div>
+          <div class="stat-label">kW — DC fast charging systems designed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">3+</div>
+          <div class="stat-label">Patents granted and pending</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">IEEE</div>
+          <div class="stat-label">SAE · NENA contributor</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">Global</div>
+          <div class="stat-label">EV infrastructure across emerging markets</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FOCUS AREAS -->
+<section id="focus">
+  <div class="section-inner">
+    <div class="section-label">// what I work on</div>
+    <h2>Focus Areas</h2>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <span class="focus-icon">⚡</span>
+        <h3>Power Electronics</h3>
+        <p>Advanced converter topologies, resonant circuits, bidirectional energy transfer, and SiC-based high-frequency designs.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">🔌</span>
+        <h3>EV Charging Infrastructure</h3>
+        <p>AC and DC fast charging systems from 60 to 480&nbsp;kW — design, grid integration, and deployment across diverse utility environments.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">📜</span>
+        <h3>Intellectual Property</h3>
+        <p>Invention across power electronics, sensing devices, and voice technology — granted and pending patents in the US and India.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">🌐</span>
+        <h3>Emerging Markets</h3>
+        <p>Energy infrastructure deployment where grid constraints, policy environments, and market dynamics require first-principles thinking.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">🤖</span>
+        <h3>AI & Software</h3>
+        <p>AI applied to energy systems optimization, predictive grid management, and intelligent charging infrastructure.</p>
+      </div>
+      <div class="focus-card">
+        <span class="focus-icon">⚖️</span>
+        <h3>Policy & Standards</h3>
+        <p>Working with IEEE, SAE, and NENA to shape how engineering constraints become deployable, enforceable standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- PATENTS -->
+<section id="patents">
+  <div class="section-inner">
+    <div class="section-label">// intellectual property</div>
+    <h2>Patents</h2>
+    <div class="patent-list">
+      <div class="patent-item">
+        <div>
+          <h3>Voice-Based Natural Language Security System</h3>
+          <p>Multi-user identification, real-time distress detection, and autonomous emergency communication. Patented at Emergence Technologies — actively licensed across multiple use cases.</p>
+        </div>
+        <span class="patent-badge badge-granted">Granted</span>
+      </div>
+      <div class="patent-item">
+        <div>
+          <h3>Advanced Bidirectional Converter Topology for EV Charging</h3>
+          <p>Multi-modal power conversion supporting vehicle-to-grid (V2G), grid-to-vehicle (G2V), and renewable energy integration at scale. Dual filing: USPTO and India PTO.</p>
+        </div>
+        <span class="patent-badge badge-pending">Pending</span>
+      </div>
+      <div class="patent-item">
+        <div>
+          <h3>Autonomous Sensing Device — Wearable Technology</h3>
+          <p>Autonomous step-counting and motion sensing device for wearable applications. Patent pending.</p>
+        </div>
+        <span class="patent-badge badge-pending">Pending</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-inner">
+    <div class="section-label">// writing</div>
+    <h2>On LinkedIn</h2>
+    <div class="writing-block">
+      <p>
+        I write regularly on LinkedIn on EV infrastructure, grid challenges, charging policy, and the gap between what governments commit to building and what actually gets built.
+      </p>
+      <p>
+        The focus is substance over narrative — real numbers, real constraints, real policy. No hype. The energy transition is complicated enough without adding noise to it.
+      </p>
+      <div class="writing-topics">
+        <span class="topic-tag">EV infrastructure</span>
+        <span class="topic-tag">Grid integration</span>
+        <span class="topic-tag">Charging policy</span>
+        <span class="topic-tag">Power electronics</span>
+        <span class="topic-tag">Emerging markets</span>
+        <span class="topic-tag">IP strategy</span>
+        <span class="topic-tag">DISCOM reform</span>
+        <span class="topic-tag">V2G technology</span>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <a href="https://www.linkedin.com/in/chandrandeepak" target="_blank" rel="noopener" class="btn btn-outline">Read on LinkedIn →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- CONNECT -->
+<section id="connect">
+  <div class="section-inner">
+    <div class="section-label">// connect</div>
+    <h2>If you work on energy systems, power electronics, grid infrastructure, or EV deployment — I'd like to connect.</h2>
+    <div class="connect-grid">
+      <div>
+        <div class="connect-links">
+          <a href="https://www.linkedin.com/in/chandrandeepak" target="_blank" rel="noopener" class="connect-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn — chandrandeepak
+          </a>
+          <a href="https://github.com/cdr2265" target="_blank" rel="noopener" class="connect-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub — cdr2265
+          </a>
+          <a href="mailto:cdrtaj@gmail.com" class="connect-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            cdrtaj@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="connect-badge-area">
+        <div class="label">// LinkedIn profile</div>
+        <div class="badge-container">
+          <div class="badge-base LI-profile-badge"
+               data-locale="en_US"
+               data-size="large"
+               data-theme="dark"
+               data-type="HORIZONTAL"
+               data-vanity="chandrandeepak"
+               data-version="v1">
+            <a class="badge-base__link LI-simple-link"
+               href="https://www.linkedin.com/in/chandrandeepak?trk=profile-badge">Deepak Chandran</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Deepak Chandran. All rights reserved.</p>
+  <p>
+    <a href="https://www.linkedin.com/in/chandrandeepak" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp;
+    <a href="https://github.com/cdr2265" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</footer>
+
+<!-- LinkedIn badge script -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>
